@@ -82,7 +82,23 @@ public class BaseBallGame {
 
         if (strike == 3) {
             message.gameOver();
+            this.askContinue();
+            return;
         }
+
+        this.resetStrikeBall();
+    }
+
+    private void askContinue() {
+        message.askContinue();
+
+        String input = nextstep.utils.Console.readLine();
+
+        if (this.isNumber(input) && input.equals("1")) {
+            this.resetGame();
+            return;
+        }
+        this.setRunning(false);
     }
 
     private void checkNumber(int number, int index) {
