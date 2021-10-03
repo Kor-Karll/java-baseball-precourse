@@ -7,6 +7,7 @@ public class Message {
     private final String NOTHING = "낫싱";
     private final String GAME_OVER = "3개의 숫자를 모두 맞히셨습니다. 게임종료";
     private final String ASK_CONTINUE = "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.";
+    private final String GAME_END = "게임 끝";
 
     /**
      * 입력 받기 메세지
@@ -58,11 +59,11 @@ public class Message {
     public void getResult(int strike, int ball) {
         String message = "";
         if (strike > 0) {
-            message += strike + " 스트라이크 ";
+            message += strike + "스트라이크 ";
         }
 
         if (ball > 0) {
-            message += ball + " 볼";
+            message += ball + "볼";
         }
 
         if (message.length() == 0) {
@@ -71,5 +72,9 @@ public class Message {
         }
 
         System.out.println(message);
+    }
+
+    public void getGameEnd() {
+        System.out.println(this.GAME_END);
     }
 }

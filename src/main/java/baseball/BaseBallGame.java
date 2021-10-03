@@ -2,6 +2,8 @@ package baseball;
 
 import java.util.ArrayList;
 import nextstep.utils.Message;
+import nextstep.utils.Console;
+import nextstep.utils.Randoms;
 
 public class BaseBallGame {
     private boolean isRunning;
@@ -37,31 +39,13 @@ public class BaseBallGame {
     public String getInput() {
         message.getInput();
 
-        return nextstep.utils.Console.readLine();
+        return Console.readLine();
     }
 
     private int[] createAnswer() {
-        ArrayList<Integer> temp_array = new ArrayList<Integer>(){
-            {
-                add(1);
-                add(2);
-                add(3);
-                add(4);
-                add(5);
-                add(6);
-                add(7);
-                add(8);
-                add(9);
-            }
-        };
-        int max_idx = temp_array.size();
-
         int[] answer = new int[3];
         for (int i = 0; i < 3; i++) {
-            int remove_idx = nextstep.utils.Randoms.pickNumberInRange(1,max_idx) - 1;
-            answer[i] = temp_array.get(remove_idx);
-            temp_array.remove(remove_idx);
-            max_idx--;
+            answer[i] = Randoms.pickNumberInRange(1,9);
         }
         return answer;
     }
@@ -92,12 +76,13 @@ public class BaseBallGame {
     private void askContinue() {
         message.askContinue();
 
-        String input = nextstep.utils.Console.readLine();
+        String input = Console.readLine();
 
         if (this.isNumber(input) && input.equals("1")) {
             this.resetGame();
             return;
         }
+        message.getGameEnd();
         this.setRunning(false);
     }
 
