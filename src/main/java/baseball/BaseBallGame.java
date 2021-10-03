@@ -5,6 +5,8 @@ import nextstep.utils.Message;
 public class BaseBallGame {
     private boolean isRunning;
     Message message;
+    int strike;
+    int ball;
 
     public BaseBallGame(Message message) {
         this.message = message;
@@ -12,6 +14,8 @@ public class BaseBallGame {
     }
 
     public void resetGame() {
+        this.strike = 0;
+        this.ball = 0;
         this.setRunning(true);
     }
 
