@@ -22,4 +22,10 @@ public class BaseBallGame {
     public void setRunning(boolean running) {
         isRunning = running;
     }
+
+    public String getInput() {
+        message.getInput();
+
+        return nextstep.utils.Console.readLine();
+    }
 }
