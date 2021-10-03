@@ -16,10 +16,14 @@ public class BaseBallGame {
     }
 
     public void resetGame() {
-        this.strike = 0;
-        this.ball = 0;
+        resetStrikeBall();
         this.setRunning(true);
         this.answer = this.createAnswer();
+    }
+
+    private void resetStrikeBall() {
+        this.strike = 0;
+        this.ball = 0;
     }
 
     public boolean isRunning() {
