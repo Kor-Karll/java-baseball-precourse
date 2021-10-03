@@ -1,5 +1,6 @@
 package baseball;
 
+import java.util.ArrayList;
 import nextstep.utils.Message;
 
 public class BaseBallGame {
@@ -7,6 +8,7 @@ public class BaseBallGame {
     Message message;
     int strike;
     int ball;
+    int[] answer;
 
     public BaseBallGame(Message message) {
         this.message = message;
@@ -17,6 +19,7 @@ public class BaseBallGame {
         this.strike = 0;
         this.ball = 0;
         this.setRunning(true);
+        this.answer = this.createAnswer();
     }
 
     public boolean isRunning() {
@@ -33,12 +36,37 @@ public class BaseBallGame {
         return nextstep.utils.Console.readLine();
     }
 
+    private int[] createAnswer() {
+        ArrayList<Integer> temp_array = new ArrayList<Integer>(){
+            {
+                add(1);
+                add(2);
+                add(3);
+                add(4);
+                add(5);
+                add(6);
+                add(7);
+                add(8);
+                add(9);
+            }
+        };
+        int max_idx = temp_array.size();
+
+        int[] answer = new int[3];
+        for (int i = 0; i < 3; i++) {
+            int remove_idx = nextstep.utils.Randoms.pickNumberInRange(1,max_idx) - 1;
+            answer[i] = temp_array.get(remove_idx);
+            temp_array.remove(remove_idx);
+            max_idx--;
+        }
+        return answer;
+    }
+
     public void checkAnswer(String input) {
         if (this.isNumber(input) && this.checkInputThreeLength(input)) {
             int[] answer = this.createIntArray(input);
             this.check(answer);
         }
-        this.setRunning(false);
     }
 
     private void check(int[] answer) {
