@@ -46,6 +46,8 @@ public class BaseBallGame {
             //todo answer[i]
         }
 
+        message.getResult(this.strike, this.ball);
+
         if (strike == 3) {
             message.gameOver();
         }
