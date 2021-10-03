@@ -5,3 +5,10 @@
 
 ## 과제 제출 과정
 * [과제 제출 방법](https://github.com/next-step/nextstep-docs/tree/master/precourse)
+
+## 구현할 기능 목록
+* 안내 메세지 출력 기능
+* 게임 시작/끝 기능
+* 정답 만들기 기능
+* 입력받기 기능(제공 받음)
+* 입력받은값 검증 기능
