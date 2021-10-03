@@ -5,6 +5,7 @@ public class Application {
         BaseBallGame baseBallGame = new BaseBallGame();
 
         while(baseBallGame.isRunning()) {
+            baseBallGame.resetGame();
             baseBallGame.setRunning(false);
         }
     }

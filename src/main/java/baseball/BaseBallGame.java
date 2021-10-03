@@ -4,7 +4,11 @@ public class BaseBallGame {
     private boolean isRunning;
 
     public BaseBallGame() {
-        this.isRunning = true;
+        this.resetGame();
+    }
+
+    public void resetGame() {
+        this.setRunning(true);
     }
 
     public boolean isRunning() {
@@ -15,4 +19,3 @@ public class BaseBallGame {
         isRunning = running;
     }
 }
-
