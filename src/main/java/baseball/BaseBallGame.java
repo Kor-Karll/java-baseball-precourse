@@ -28,4 +28,8 @@ public class BaseBallGame {
 
         return nextstep.utils.Console.readLine();
     }
+
+    public void checkAnswer(String input) {
+        this.setRunning(false);
+    }
 }

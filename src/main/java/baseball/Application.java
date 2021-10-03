@@ -9,7 +9,7 @@ public class Application {
 
         while(baseBallGame.isRunning()) {
             String input = baseBallGame.getInput();
-            baseBallGame.setRunning(false);
+            baseBallGame.checkAnswer(input);
         }
     }
 }
